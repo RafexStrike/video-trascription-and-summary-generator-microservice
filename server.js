@@ -16,12 +16,29 @@ const app = express();
 console.log(process.env.HF_TOKEN);
 
 // Allowing CORS from my server
-const allowed = (process.env.ALLOWED_ORIGINS || "").split(",").filter(Boolean);
-app.use(
-  cors({
-    origin: allowed.length ? allowed : true,
-  })
-);
+// const allowed = (process.env.ALLOWED_ORIGINS || "").split(",").filter(Boolean);
+// app.use(
+//   cors({
+//     origin: allowed.length ? allowed : true,
+//   })
+// );
+
+
+// Hard coded CORS starts...
+const corsOptions = {
+  origin: [
+    "http://localhost:3000", // Your local frontend
+    "https://ph-team-code-spirit-quick-clip.vercel.app", // Replace with your actual frontend Vercel URL
+    // Add any other frontend URLs you might use
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
+// Hard coded CORS ends...
+
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 200 * 1024 * 1024 }, // 200MB max (adjust if you need)
