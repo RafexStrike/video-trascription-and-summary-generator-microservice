@@ -1,0 +1,25 @@
+{
+  "name": "video-trascription-and-summary-generator-microservice",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@huggingface/inference": "^4.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "ffmpeg-static": "^5.2.0",
+    "multer": "^2.0.2",
+    "node-fetch": "^3.3.2"
+  }
+}
