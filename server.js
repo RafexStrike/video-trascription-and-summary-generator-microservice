@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
-
 import multer from "multer";
 import path from "path";
 import os from "os";
@@ -14,42 +13,6 @@ import cors from "cors";
 const app = express();
 
 console.log(process.env.HF_TOKEN);
-
-// Allowing CORS from my server
-// const allowed = (process.env.ALLOWED_ORIGINS || "").split(",").filter(Boolean);
-// app.use(
-//   cors({
-//     origin: allowed.length ? allowed : true,
-//   })
-// );
-
-
-
-// const { MongoClient, ServerApiVersion } = require('mongodb');
-// const uri = "mongodb+srv://adnanrahmanrafi515_db_user:<db_password>@team-codespirit.1hqnrfe.mongodb.net/?retryWrites=true&w=majority&appName=Team-CodeSpirit";
-
-// // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-// const client = new MongoClient(uri, {
-//   serverApi: {
-//     version: ServerApiVersion.v1,
-//     strict: true,
-//     deprecationErrors: true,
-//   }
-// });
-
-// async function run() {
-//   try {
-//     // Connect the client to the server	(optional starting in v4.7)
-//     await client.connect();
-//     // Send a ping to confirm a successful connection
-//     await client.db("admin").command({ ping: 1 });
-//     console.log("Pinged your deployment. You successfully connected to MongoDB!");
-//   } finally {
-//     // Ensures that the client will close when you finish/error
-//     await client.close();
-//   }
-// }
-// run().catch(console.dir);
 
 
 // Hard coded CORS starts...
@@ -70,7 +33,7 @@ app.use(cors(corsOptions));
 
 const upload = multer({
   storage: multer.memoryStorage(),
-  limits: { fileSize: 200 * 1024 * 1024 }, // 200MB max (adjust if you need)
+  limits: { fileSize: 200 * 1024 * 1024 }, // 200MB max 
 });
 
 const PORT = process.env.PORT || 3002;
