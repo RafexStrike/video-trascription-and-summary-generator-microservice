@@ -24,12 +24,41 @@ console.log(process.env.HF_TOKEN);
 // );
 
 
+
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const uri = "mongodb+srv://adnanrahmanrafi515_db_user:<db_password>@team-codespirit.1hqnrfe.mongodb.net/?retryWrites=true&w=majority&appName=Team-CodeSpirit";
+
+// // Create a MongoClient with a MongoClientOptions object to set the Stable API version
+// const client = new MongoClient(uri, {
+//   serverApi: {
+//     version: ServerApiVersion.v1,
+//     strict: true,
+//     deprecationErrors: true,
+//   }
+// });
+
+// async function run() {
+//   try {
+//     // Connect the client to the server	(optional starting in v4.7)
+//     await client.connect();
+//     // Send a ping to confirm a successful connection
+//     await client.db("admin").command({ ping: 1 });
+//     console.log("Pinged your deployment. You successfully connected to MongoDB!");
+//   } finally {
+//     // Ensures that the client will close when you finish/error
+//     await client.close();
+//   }
+// }
+// run().catch(console.dir);
+
+
 // Hard coded CORS starts...
 const corsOptions = {
   origin: [
-    "http://localhost:3000", // Your local frontend
-    "https://ph-team-code-spirit-quick-clip.vercel.app", // Replace with your actual frontend Vercel URL
-    // Add any other frontend URLs you might use
+    "http://localhost:3000", 
+    "https://ph-team-code-spirit-quick-clip.vercel.app", 
+    "https://luminal-ai.vercel.app"
+ 
   ],
   credentials: true,
   optionsSuccessStatus: 200,
